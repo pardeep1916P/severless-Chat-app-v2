@@ -2,7 +2,7 @@ import AWS from 'aws-sdk';
 
 const ddb = new AWS.DynamoDB.DocumentClient();
 const client = new AWS.ApiGatewayManagementApi({
-  endpoint: 'https://6wlyb2jxxi.execute-api.ap-south-2.amazonaws.com/production',
+  endpoint: 'api-gateway.endpointUrl',
 });
 
 const CONNECTIONS_TABLE = 'ChatConnections';
