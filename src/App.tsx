@@ -7,7 +7,8 @@ export interface Member {
   isGhost?: boolean;
 }
 
-const WEBSOCKET_URL = 'wss://6wlyb2jxxi.execute-api.ap-south-2.amazonaws.com/production/';
+const WEBSOCKET_URL = import.meta.env.VITE_WEBSOCKET_URL;
+
 
 const App: React.FC = () => {
   const socket = useRef<WebSocket | null>(null);
