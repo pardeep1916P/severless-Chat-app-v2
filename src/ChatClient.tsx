@@ -52,8 +52,6 @@ export const ChatUI: React.FC<Props> = ({
   setPrivateTarget,
   privateMessage,
   setPrivateMessage,
-  // showPrivatePopup,            <-- now unused
-  // setShowPrivatePopup,        <-- now unused
   joinInputRef,
   publicInputRef,
   privateInputRef,
@@ -88,15 +86,12 @@ export const ChatUI: React.FC<Props> = ({
 
   return (
     <div className="app-container">
-      {/* Sidebar toggle button (mobile) */}
       <button
         className="sidebar-toggle-button"
         onClick={() => setShowSidebar(true)}
       >
         <img src={userIcon} alt="Members" style={{ width: '17px' }} />
       </button>
-
-      {/* Sidebar */}
       <div className={`sidebar ${showSidebar ? 'active' : 'hidden'}`}>
         <button
           className="close-sidebar-button"
@@ -136,8 +131,6 @@ export const ChatUI: React.FC<Props> = ({
           Disconnect
         </button>
       </div>
-
-      {/* Chat area */}
       <div className="chat-section">
         <div className="header">
           <img
@@ -152,8 +145,6 @@ export const ChatUI: React.FC<Props> = ({
         </div>
 
         <div className="chat-display">{chatRows}</div>
-
-        {/* WhatsApp-like private target bar */}
         {privateTarget && (
           <div className="private-target-bar">
             Private message to <strong>{privateTarget.name}</strong>
