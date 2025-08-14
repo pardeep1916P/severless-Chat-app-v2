@@ -8,9 +8,15 @@
 ![DynamoDB](https://img.shields.io/badge/DynamoDB-4053D6?style=for-the-badge&logo=amazondynamodb&logoColor=white)
 
 **Frontend:** 🚀 Vercel (React + TypeScript + Vite)  
-**Backend:** ☁️ AWS Lambda (Node.js) + API Gateway (WebSocket)  
-**Your Role:** 🛠️ Cloud Engineer — Architected & deployed AWS infrastructure, integrated backend with frontend, configured CI/CD, ensured scalability & security.  
-*(Frontend & backend code provided by development team)*
+**Backend:** ☁️ AWS Lambda (**Server**) + API Gateway (WebSocket)  
+
+💼 **My Role – Cloud Engineer**  
+- Designed & deployed the **entire AWS serverless architecture** from scratch.  
+- Integrated **frontend with backend WebSocket API** for real-time chat.  
+- Implemented **secure IAM policies** and CI/CD pipelines for automated deployment.  
+- Ensured **high availability, scalability, and cost-efficiency**.  
+
+> *(Frontend & backend application code was sourced from open repositories — AWS infrastructure & deployment was fully designed and implemented by me)*
 
 ---
 
@@ -26,59 +32,60 @@ A **real-time chat application** built with a **fully serverless AWS architectur
 ## 🏗️ Cloud Architecture
 
 ```plaintext
-           🖥️ User Browser
-                 │
-                 ▼
-       🌐 Vercel (Frontend Hosting)
-                 │
-                 ▼
-     🔌 API Gateway (WebSocket API)
-                 │
-                 ▼
- ⚙️ AWS Lambda (Server - Handles Events)
-                 │
-                 ▼
+      🖥️ User Browser
+            │
+            ▼
+   🌐 Vercel (Frontend)
+            │
+            ▼
+🔌 API Gateway (WebSocket API)
+            │
+            ▼
+⚙️ AWS Lambda (Server - Handles Events)
+            │
+            ▼
 📂 DynamoDB (Tracks Active Connections)
-🚀 Features
-Real-time messaging using API Gateway WebSockets
+```
 
-AWS Lambda acts as the server to process events
+---
 
-DynamoDB for connection tracking only
+## 🚀 Features
+- Real-time messaging using **API Gateway WebSockets**  
+- **AWS Lambda** acts as the server to process events  
+- **DynamoDB** for connection tracking only (no message storage)  
+- Auto-scaling backend with AWS Lambda  
+- Secure communication via IAM & API Gateway settings  
+- Fully managed serverless infrastructure — no physical servers to maintain  
 
-Auto-scaling backend with AWS Lambda
+---
 
-Secure communication via IAM & API Gateway settings
+## 🛠️ AWS Services & Responsibilities
 
-Fully managed serverless infrastructure — no servers to maintain physically
+| Service                     | Purpose                                           |
+|-----------------------------|---------------------------------------------------|
+| API Gateway (WebSocket)     | Manage real-time connections & route messages     |
+| AWS Lambda (Server)         | Handle connect, message, and disconnect events    |
+| DynamoDB                    | Store active WebSocket connection IDs             |
+| IAM                         | Implement least-privilege access control          |
+| CloudWatch                  | Log monitoring & error tracking                   |
 
-🛠️ AWS Services & Responsibilities
-Service	Purpose
-API Gateway (WebSocket)	Manage real-time connections & route messages
-AWS Lambda	Server — Handle connect, message, and disconnect events
-DynamoDB	Store active WebSocket connection IDs
-IAM	Implement least-privilege access control
-CloudWatch	Log monitoring & error tracking
+**Cloud Engineer Contributions:**
+- Designed **API Gateway → Lambda → DynamoDB** workflow  
+- Configured secure IAM roles & policies  
+- Set up **CloudWatch monitoring** for logs & alerts  
+- Integrated **Vercel frontend** with backend WebSocket endpoint  
 
-Cloud Engineer Contributions:
+---
 
-Designed API Gateway → Lambda → DynamoDB workflow
+## 🌐 Live Deployment
+- **Frontend (Vercel):** https://severless-chat-app-v2.vercel.app 
+- **WebSocket API Endpoint(backend required):** wss://<your-api-id>.execute-api.<region>.amazonaws.com/dev  
 
-Configured secure IAM roles & policies
+---
 
-Set up CloudWatch monitoring for logs & alerts
+## 🧪 Local Development (Backend)
 
-Integrated Vercel frontend with backend WebSocket endpoint
-
-🌐 Live Deployment
-Frontend (Vercel): https://<your-vercel-app>.vercel.app
-
-WebSocket API Endpoint: wss://<your-api-id>.execute-api.<region>.amazonaws.com/dev
-
-🧪 Local Development (Backend)
-bash
-Copy
-Edit
+```bash
 # 1️⃣ Clone the repo
 git clone https://github.com/pardeep1916P/severless-Chat-app-v2.git
 cd severless-Chat-app-v2
@@ -91,21 +98,24 @@ npm install
 serverless offline
 # or
 sam local start-api
-📂 Project Structure
-graphql
-Copy
-Edit
+```
+
+---
+
+## 📂 Project Structure
+```
 src/              # Frontend (React + TypeScript + Vite)
 serverBackend/    # AWS Lambda backend code
 index.html        # Frontend entry point
 vite.config.ts    # Vite configuration
 tsconfig.json     # TypeScript configuration
 package.json      # Dependencies
-✅ Cloud Engineer Impact
-Delivered a cost-effective, real-time communication platform
+```
 
-Designed a scalable & secure AWS WebSocket API
+---
 
-Eliminated server maintenance using fully managed AWS services
-
-Integrated monitoring & logging for operational visibility
+## ✅ Cloud Engineer Impact
+- Delivered a **cost-effective, real-time communication platform**  
+- Designed a **scalable & secure AWS WebSocket API**  
+- Eliminated server maintenance using fully managed AWS services  
+- Integrated **monitoring & logging** for operational visibility  
