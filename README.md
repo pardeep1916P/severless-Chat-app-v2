@@ -79,7 +79,7 @@ A **real-time chat application** built with a **fully serverless AWS architectur
 
 ## 🌐 Live Deployment
 - **Frontend (Vercel):** https://severless-chat-app-v2.vercel.app 
-- **WebSocket API Endpoint(backend required):** wss://<your-api-id>.execute-api.<region>.amazonaws.com/dev  
+- **WebSocket API Endpoint(backend required):** https://<your-api-id>.execute-api.<region>.amazonaws.com/dev  
 
 ---
 
